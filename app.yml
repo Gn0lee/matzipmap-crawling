@@ -1,0 +1,3 @@
+runtime: nodejs@lts
+
+service: matzipmap-crawling

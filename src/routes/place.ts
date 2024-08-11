@@ -61,6 +61,8 @@ router.get('/:id', async (req: Request, res: Response) => {
 			.status(200)
 			.json({ response: { main_photo_url: mainPhotoUrl, score, score_count: scoreCount, id: Number(id) } });
 	} catch (error) {
+		console.log(error);
+
 		res.status(500).json({ error: 'Internal server error', code: 'CRW001' });
 	}
 });

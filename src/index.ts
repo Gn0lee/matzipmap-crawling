@@ -5,7 +5,7 @@ import placeRouter from './routes/place';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 // JSON 파싱 미들웨어
 app.use(express.json());

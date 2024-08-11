@@ -3,6 +3,10 @@ name: Deploy to Goggle App Engine (GAE)
 on:
   workflow_dispatch:
 
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

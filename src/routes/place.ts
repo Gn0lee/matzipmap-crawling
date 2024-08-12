@@ -35,7 +35,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 
 		const kakaoMapUrl = `https://place.map.kakao.com/m/${id}`;
 
-		await page.goto(kakaoMapUrl, { waitUntil: 'networkidle2' });
+		await page.goto(kakaoMapUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
 		await page.waitForSelector('a[data-viewid="basicInfoTopImage"]');
 
@@ -63,7 +63,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 	} catch (error) {
 		console.log(error);
 
-		res.status(500).json({ error: 'Internal server error', code: 'CRW001' });
+		res.status(200).json({ response: { main_photo_url: '', score: 0, score_count: 0, id: Number(id) } });
 	}
 });
 

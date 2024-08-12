@@ -37,11 +37,11 @@ router.get('/:id', async (req: Request, res: Response) => {
 
 		await page.goto(kakaoMapUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
-		await page.waitForSelector('a[data-viewid="basicInfoTopImage"]');
+		await page.waitForSelector('a[data-viewid="basicInfoTopImage"]', { timeout: 60000 });
 
-		await page.waitForSelector('span[data-score]');
+		await page.waitForSelector('span[data-score]', { timeout: 60000 });
 
-		await page.waitForSelector('span[data-comntcnt]');
+		await page.waitForSelector('span[data-comntcnt]', { timeout: 60000 });
 
 		const content = await page.content();
 

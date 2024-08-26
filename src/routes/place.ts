@@ -35,7 +35,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 
 		const kakaoMapUrl = `https://place.map.kakao.com/m/${id}`;
 
-		await page.goto(kakaoMapUrl, { waitUntil: 'networkidle2', timeout: 60000 });
+		await page.goto(kakaoMapUrl);
 
 		await page.waitForSelector('a[data-viewid="basicInfoTopImage"]', { timeout: 60000 });
 
